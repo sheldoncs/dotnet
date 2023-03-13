@@ -24,6 +24,7 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using jwtcore.CollectionFactory;
 using jwtcore.Configuration;
+using jwtcore.Data.Database;
 
 namespace jwtcore
 {
@@ -72,9 +73,9 @@ namespace jwtcore
             // });
              
 
-            services.AddAuthentication("Basic").AddScheme<BasicAuthenticationOptions,CustomAuthenticationHandler>("Basic",null);
-           
-           services.AddDbContext<AdvisorContext>(opt => {
+           services.AddAuthentication("Basic").AddScheme<BasicAuthenticationOptions,CustomAuthenticationHandler>("Basic",null);
+          
+            services.AddDbContext<DatabaseContext>(opt => {
 
                  opt.UseMySQL(Configuration.GetConnectionString("AdvisorConnection"));
             });

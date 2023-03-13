@@ -17,7 +17,7 @@ namespace jwtcore.Data.Database
         public DbSet<Specialization> Specializations { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Level> Levels { get; set; }
-
+        
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -25,5 +25,8 @@ namespace jwtcore.Data.Database
         /// </summary>
         /// <returns>An <see cref="IExecutionStrategy" /> instance.</returns>
         IExecutionStrategy CreateExecutionStrategy();
+
+
+      //  int SaveChanges(bool acceptAllChangesOnSuccess);
     }
 }

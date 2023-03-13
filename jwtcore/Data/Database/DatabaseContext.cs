@@ -31,16 +31,13 @@ namespace jwtcore.Data.Database
 
             return await base.SaveChangesAsync(cancellationToken);
         }
-        public override int SaveChanges(bool acceptAllChangesOnSuccess)
-        {
-
-            return base.SaveChanges(acceptAllChangesOnSuccess);
-        }
+      
         public IExecutionStrategy CreateExecutionStrategy()
         {
             return Database.CreateExecutionStrategy();
         }
 
         partial void BuildAdvisorTransaction(ModelBuilder modelBuilder);
+
     }
 }

@@ -18,7 +18,7 @@ namespace AccountBalance.Filters
         {
             if (!context.ModelState.IsValid)
             {
-                var messages = string.Join("; ",context. ModelState.Values
+                var messages = string.Join("; ",context.ModelState.Values
                     .SelectMany(x => x.Errors)
                     .Select(x => x.ErrorMessage));
                 
